@@ -19,7 +19,8 @@ while(true){
             const resultprice = Number(input(`Enter amount: `))
             const UpOrDown = input(`enter true for the up or false for the down: `)
             console.log(filterStocksByPrice(resultprice,UpOrDown));
-             
+        case 4:
+            break     
         } 
 
 }
