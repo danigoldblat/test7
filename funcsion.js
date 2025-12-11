@@ -4,7 +4,7 @@ import { stockMarket } from "./data.js"
 
 export function StockSearch(identifier){
     
-    const resultIdentifier = stockMarket.stocks.find(stock =>i.id===identifier || i.name===identifier)
+    const resultIdentifier = stockMarket.stocks.find(stock =>stock.id===identifier || stock.name===identifier)
     return [resultIdentifier]
 }
    
@@ -14,5 +14,13 @@ export function StockSearch(identifier){
 
 
 export function filterStocksByPrice(givenPrice, above){
-    const resultPrice = stockMarket.stocks.filter()
+    const arr = []
+    for(let i = 0;i<stockMarket.stocks.length;i++){
+        if(above===`true` && stockMarket.stocks[i].currentPrice >= givenPrice){
+            arr.push(stockMarket.stocks[i])   
+        }
+        else if(above===`false` && stockMarket.stocks[i].currentPrice <= givenPrice){
+            arr.push(stockMarket.stocks[i]) 
+        }
+    }return arr
 }

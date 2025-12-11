@@ -1,4 +1,4 @@
-import { StockSearch } from "./funcsion.js";
+import { filterStocksByPrice, StockSearch } from "./funcsion.js";
 import input from "analiza-sync"
 
 while(true){
@@ -12,13 +12,17 @@ while(true){
         `))
     switch(resultMenu){ 
         case 1:
-            const result = input(`enter ID or name: `)
-            console.log(StockSearch(result))
+            const resultid = input(`enter ID or name: `)
+            console.log(StockSearch(resultid))
                 break
-
+        case 2:
+            const resultprice = Number(input(`Enter amount: `))
+            const UpOrDown = input(`enter true for the up or false for the down: `)
+            console.log(filterStocksByPrice(resultprice,UpOrDown));
+             
         } 
 
+}
 
 
-
-    }
+    
